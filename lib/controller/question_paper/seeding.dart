@@ -4,10 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:quizz_app/firebase/loading_status.dart';
 import 'package:quizz_app/firebase/references.dart';
 import 'package:quizz_app/models/Quizz.model.dart';
 
 class Seeding extends GetxController {
+  final loadingStatus = LoadingStatus.loading.obs;
   @override
   void onReady() {
     seedData();
@@ -16,6 +18,7 @@ class Seeding extends GetxController {
 
   Future<void> seedData() async {
     final firestore = FirebaseFirestore.instance;
+    loadingStatus.value = LoadingStatus.loading;
     final assetManifest = json.decode(await DefaultAssetBundle.of(Get.context!)
         .loadString("AssetManifest.json"));
     final List<String> questionsManifest = assetManifest.keys
@@ -57,5 +60,6 @@ class Seeding extends GetxController {
     }
 
     await batch.commit();
+    loadingStatus.value = LoadingStatus.completed;
   }
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/controller/question_paper/seeding.dart';
+import 'package:quizz_app/firebase/loading_status.dart';
 
 class SeedingScreen extends StatelessWidget {
   SeedingScreen({super.key});
@@ -10,9 +9,15 @@ class SeedingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("Uploading Data"),
+        child: Obx(
+          () => Text(
+            seeder.loadingStatus.value == LoadingStatus.loading
+                ? "Uploading"
+                : "Completed",
+          ),
+        ),
       ),
     );
   }

@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
-import 'package:quizz_app/screens/seeding_loading.screen.dart';
-import 'firebase_options.dart';
+import 'package:quizz_app/binding/bootstrap_binding.dart';
+import 'package:quizz_app/routes/routes.dart';
+// import 'package:quizz_app/screens/seeding_loading.screen.dart';
+// import 'firebase_options.dart';
 
-Future<void> main() async {
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+//   );
+//   runApp(const MyApp());
+// }
+
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  BootstrapBinding().dependencies();
   runApp(const MyApp());
 }
 
@@ -18,7 +26,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: SeedingScreen(),
+      theme: ThemeData(fontFamily: 'Sora'),
+      getPages: AppRoutes.routes(),
     );
   }
 }

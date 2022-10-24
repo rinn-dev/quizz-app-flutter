@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^1.24.0
   cloud_firestore: ^3.5.1
+  fluentui_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -94,3 +95,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Sora
+      fonts:
+        - asset: fonts/Sora-Regular.ttf
+          weight: 400
+        - asset: fonts/Sora-Light-300.ttf
+          weight: 300
+        - asset: fonts/Sora-SemiBold-600.ttf
+          weight: 600
+        
