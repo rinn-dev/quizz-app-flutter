@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
@@ -8,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuizzController quizzController = Get.find();
+
     return Scaffold(
       body: Obx(
         () => ListView.separated(
@@ -16,9 +18,14 @@ class HomeScreen extends StatelessWidget {
                 child: SizedBox(
                   height: 200,
                   width: 200,
-                  child: FadeInImage(
-                    image: NetworkImage(quizzController.quizzImages[index]),
-                    placeholder: const AssetImage("assets/images/physics.png"),
+                  child: CachedNetworkImage(
+                    imageUrl: quizzController.quizzes[index].imageUrl,
+                    placeholder: (context, url) => Container(
+                      alignment: Alignment.center,
+                      child: const CircularProgressIndicator(),
+                    ),
+                    errorWidget: (context, url, error) =>
+                        Image.asset("assets/images/physics.png"),
                   ),
                 ),
               );
@@ -26,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             separatorBuilder: ((context, index) {
               return const SizedBox(height: 20);
             }),
-            itemCount: quizzController.quizzImages.length),
+            itemCount: quizzController.quizzes.length),
       ),
     );
   }

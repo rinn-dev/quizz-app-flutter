@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Quizz {
   String id;
   String title;
   String imageUrl;
   String description;
   int timeSeconds;
+  int questionsCount;
   List<Questions>? questions;
 
   Quizz(
@@ -12,6 +15,7 @@ class Quizz {
       required this.imageUrl,
       required this.description,
       required this.timeSeconds,
+      required this.questionsCount,
       this.questions});
 
   Quizz.fromJson(Map<String, dynamic> json)
@@ -22,7 +26,17 @@ class Quizz {
         timeSeconds = json['time_seconds'],
         questions = (json['questions'] as List)
             .map((item) => Questions.fromJson(item))
-            .toList();
+            .toList(),
+        questionsCount = 0;
+
+  Quizz.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> json)
+      : id = json.id,
+        title = json['title'],
+        imageUrl = json['image_url'],
+        description = json['description'],
+        timeSeconds = json['timeSeconds'],
+        questions = [],
+        questionsCount = json['questions_count'];
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

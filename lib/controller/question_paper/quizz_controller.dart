@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:quizz_app/firebase/references.dart';
+import 'package:quizz_app/models/Quizz.model.dart';
 import 'package:quizz_app/services/firebase_storage_service.dart';
 
 class QuizzController extends GetxController {
-  final quizzImages = <String>[].obs;
+  final quizzes = <Quizz>[].obs;
   @override
   void onReady() {
     getAllPaper();
@@ -10,14 +13,19 @@ class QuizzController extends GetxController {
   }
 
   Future<void> getAllPaper() async {
-    List<String> imageNames = ['javascript', 'physics'];
     FirebaseStorageService storageServiceController =
         Get.put(FirebaseStorageService());
     try {
-      for (var imageName in imageNames) {
-        var imagePath = await storageServiceController.getImagePath(imageName);
-        quizzImages.add(imagePath!);
+      QuerySnapshot<Map<String, dynamic>> dataSnapshot = await quizzesRF.get();
+      var quizzModels = dataSnapshot.docs.map((doc) {
+        return Quizz.fromSnapshot(doc);
+      }).toList();
+      for (var quizz in quizzModels) {
+        var imagePath =
+            await storageServiceController.getImagePath(quizz.title);
+        quizz.imageUrl = imagePath!;
       }
+      quizzes.assignAll(quizzModels);
     } catch (e) {
       print(e);
     }
