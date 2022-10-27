@@ -40,6 +40,7 @@ dependencies:
   firebase_core: ^1.24.0
   cloud_firestore: ^3.5.1
   fluentui_icons: ^1.0.0
+  firebase_storage: ^10.3.11
 
 dev_dependencies:
   flutter_test:

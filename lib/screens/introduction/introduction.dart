@@ -49,7 +49,7 @@ class AppWelcomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 30.0),
               child: LongButton(
                 buttonText: "Get Started",
-                onClicked: () => 1,
+                onClicked: () => Get.offAllNamed("/home"),
                 bgColor: primaryColor,
               ),
             ),

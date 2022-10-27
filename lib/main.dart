@@ -1,10 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/binding/bootstrap_binding.dart';
+import 'package:quizz_app/firebase_options.dart';
 import 'package:quizz_app/routes/routes.dart';
-// import 'package:quizz_app/screens/seeding_loading.screen.dart';
-// import 'firebase_options.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -14,8 +13,11 @@ import 'package:quizz_app/routes/routes.dart';
 //   runApp(const MyApp());
 // }
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   BootstrapBinding().dependencies();
   runApp(const MyApp());
 }
