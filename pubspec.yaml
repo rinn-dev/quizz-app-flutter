@@ -42,6 +42,7 @@ dependencies:
   fluentui_icons: ^1.0.0
   firebase_storage: ^10.3.11
   cached_network_image: ^3.2.2
+  flutter_zoom_drawer: ^3.0.3
 
 dev_dependencies:
   flutter_test:
