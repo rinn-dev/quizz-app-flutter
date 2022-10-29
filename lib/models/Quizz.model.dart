@@ -50,6 +50,10 @@ class Quizz {
     }
     return data;
   }
+
+  int generateMinutes() {
+    return (timeSeconds / 60).round();
+  }
 }
 
 class Questions {

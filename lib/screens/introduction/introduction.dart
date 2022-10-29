@@ -9,6 +9,7 @@ class AppWelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(softScreenBackground),
       body: Container(
         alignment: Alignment.center,
         padding:
@@ -50,7 +51,7 @@ class AppWelcomeScreen extends StatelessWidget {
               child: LongButton(
                 buttonText: "Get Started",
                 onClicked: () => Get.offAllNamed("/home"),
-                bgColor: primaryColor,
+                bgColor: secondaryColor,
               ),
             ),
           ],
