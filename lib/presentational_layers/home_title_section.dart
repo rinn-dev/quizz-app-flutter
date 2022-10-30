@@ -3,7 +3,8 @@ import 'package:quizz_app/constants/colors.dart';
 import 'package:quizz_app/widgets/clickable_icon.dart';
 
 class HomeTitleSection extends StatelessWidget {
-  const HomeTitleSection({super.key});
+  final VoidCallback toggleDrawer;
+  const HomeTitleSection({super.key, required this.toggleDrawer});
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +14,10 @@ class HomeTitleSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           ClickableIcon(
-            onClick: () => 1,
+            onClick: toggleDrawer,
             icon: Icons.menu_open,
             iconSize: 28,
-            iconColor: secondaryColor,
+            iconColor: highlightColor,
           ),
           const SizedBox(
             height: 18,
@@ -29,12 +30,12 @@ class HomeTitleSection extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 6,
+            height: 8,
           ),
           const Text(
             "Check Your Programming Language Expertise Today!",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 21,
               fontWeight: FontWeight.w700,
               color: Color(secondaryColor),
             ),
