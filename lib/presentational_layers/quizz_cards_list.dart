@@ -4,7 +4,7 @@ import 'package:quizz_app/constants/colors.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
 import 'package:quizz_app/widgets/quizz_card.dart';
 
-class QuizzCardsList extends StatelessWidget {
+class QuizzCardsList extends GetView<QuizzController> {
   const QuizzCardsList({super.key});
 
   @override
@@ -24,7 +24,14 @@ class QuizzCardsList extends StatelessWidget {
             ),
             child: ListView.separated(
               itemBuilder: (context, index) {
-                return QuizzCard(quizz: quizzController.quizzes[index]);
+                return InkWell(
+                  onTap: () {
+                    controller.checkAuthBeforeQuizzDetails(
+                      quizz: quizzController.quizzes[index],
+                    );
+                  },
+                  child: QuizzCard(quizz: quizzController.quizzes[index]),
+                );
               },
               separatorBuilder: ((context, index) {
                 return const SizedBox(height: 18);
