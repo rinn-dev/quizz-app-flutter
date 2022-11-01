@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:quizz_app/controller/auth/auth.dart';
 import 'package:quizz_app/firebase/references.dart';
 import 'package:quizz_app/models/Quizz.model.dart';
 import 'package:quizz_app/services/firebase_storage_service.dart';
@@ -28,6 +29,17 @@ class QuizzController extends GetxController {
       quizzes.assignAll(quizzModels);
     } catch (e) {
       print(e);
+    }
+  }
+
+  void checkAuthBeforeQuizzDetails({
+    required Quizz quizz,
+    bool newAttempt = false,
+  }) {
+    AuthController auth = Get.find();
+    if (auth.isLoggedIn()) {
+    } else {
+      auth.showDialog();
     }
   }
 }

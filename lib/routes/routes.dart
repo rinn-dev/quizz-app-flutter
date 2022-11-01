@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
+import 'package:quizz_app/controller/ui/menu_drawer_controller.dart';
 import 'package:quizz_app/screens/home/home.dart';
 import 'package:quizz_app/screens/introduction/introduction.dart';
 import 'package:quizz_app/screens/splash/splash_screen.dart';
@@ -15,6 +16,7 @@ class AppRoutes {
           binding: BindingsBuilder(() {
             {
               Get.put(QuizzController());
+              Get.put(MenuDrawerController());
             }
           })),
     ];

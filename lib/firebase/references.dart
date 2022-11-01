@@ -13,3 +13,5 @@ DocumentReference answerRF(DocumentReference questionId, String answerId) {
 }
 
 Reference get firebaseStorage => FirebaseStorage.instance.ref();
+
+final userRF = firestore.collection("users");
