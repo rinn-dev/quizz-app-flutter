@@ -39,10 +39,16 @@ class AuthController extends GetxController {
         );
         await auth.signInWithCredential(authCredentials);
         signUpUser(googleAccount);
+        navigateToHome();
       }
     } catch (e) {
       print(e);
     }
+  }
+
+  signOut() {
+    auth.signOut();
+    navigateToHome();
   }
 
   signUpUser(GoogleSignInAccount account) async {
@@ -55,6 +61,10 @@ class AuthController extends GetxController {
 
   void navigateToWelcome() {
     Get.offAllNamed("/welcome");
+  }
+
+  void navigateToHome() {
+    Get.offAllNamed("/home");
   }
 
   void navigateToLogin() {
