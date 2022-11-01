@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:quizz_app/controller/auth/auth.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
 import 'package:quizz_app/controller/ui/menu_drawer_controller.dart';
 import 'package:quizz_app/screens/authentication/login.dart';
@@ -18,6 +19,7 @@ class AppRoutes {
           {
             Get.put(QuizzController());
             Get.put(MenuDrawerController());
+            Get.put(AuthController());
           }
         }),
       ),
