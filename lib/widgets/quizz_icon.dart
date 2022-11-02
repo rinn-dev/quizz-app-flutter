@@ -23,7 +23,9 @@ class QuizzIcon extends StatelessWidget {
                 imageUrl: iconUrl,
                 placeholder: (context, url) => Container(
                   alignment: Alignment.center,
-                  child: const CircularProgressIndicator(),
+                  child: const CircularProgressIndicator(
+                    color: Color(highlightColor),
+                  ),
                 ),
                 errorWidget: (context, url, error) =>
                     Image.asset("assets/images/physics.png"),

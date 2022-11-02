@@ -15,8 +15,7 @@ class LoginScreen extends GetView<AuthController> {
         child: Stack(
           children: [
             Padding(
-              padding: EdgeInsets.only(
-                  left: Get.width * 0.05, right: Get.width * 0.05),
+              padding: EdgeInsets.symmetric(horizontal: Get.width * 0.05),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
