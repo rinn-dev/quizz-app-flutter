@@ -5,7 +5,7 @@ import 'package:quizz_app/constants/colors.dart';
 import 'package:quizz_app/controller/ui/menu_drawer_controller.dart';
 import 'package:quizz_app/presentational_layers/home_title_section.dart';
 import 'package:quizz_app/presentational_layers/quizz_cards_list.dart';
-import 'package:quizz_app/screens/home/menu.dart';
+import 'package:quizz_app/screens/home/menu.sreen.dart';
 import 'package:quizz_app/widgets/clickable_icon.dart';
 
 class HomeScreen extends GetView<MenuDrawerController> {

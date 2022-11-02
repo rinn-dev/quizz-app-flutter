@@ -19,7 +19,7 @@ class LoginScreen extends GetView<AuthController> {
                   left: Get.width * 0.05, right: Get.width * 0.05),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Image.asset(
                     "assets/images/books.png",

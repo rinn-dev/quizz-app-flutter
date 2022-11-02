@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:quizz_app/controller/auth/auth.dart';
+import 'package:quizz_app/controller/question_paper/question_controller.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
 import 'package:quizz_app/controller/ui/menu_drawer_controller.dart';
-import 'package:quizz_app/screens/authentication/login.dart';
-import 'package:quizz_app/screens/home/home.dart';
-import 'package:quizz_app/screens/introduction/introduction.dart';
-import 'package:quizz_app/screens/splash/splash_screen.dart';
+import 'package:quizz_app/screens/authentication/login.screen.dart';
+import 'package:quizz_app/screens/home/home.screen.dart';
+import 'package:quizz_app/screens/introduction/introduction.screen.dart';
+import 'package:quizz_app/screens/question/question.screen.dart';
+import 'package:quizz_app/screens/splash/splash.screen.dart';
 
 class AppRoutes {
   static List<GetPage> routes() {
@@ -23,6 +25,14 @@ class AppRoutes {
           }
         }),
       ),
+      GetPage(
+          name: "/question",
+          page: () => const QuestionScreen(),
+          binding: BindingsBuilder(() {
+            {
+              Get.put(QuestionController());
+            }
+          })),
       GetPage(name: "/login", page: () => const LoginScreen()),
     ];
   }
