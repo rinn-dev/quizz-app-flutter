@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:quizz_app/firebase/references.dart';
@@ -42,7 +43,9 @@ class AuthController extends GetxController {
         navigateToHome();
       }
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
   }
 

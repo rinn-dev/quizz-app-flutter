@@ -10,6 +10,10 @@ class QuestionController extends GetxController {
   final loadingStatus = LoadingStatus.loading.obs;
   final allQuestions = <Questions>[];
   final currentQuestion = Rxn<Questions>();
+  final currentIndex = 0.obs;
+
+  bool get isFirstQuestion => currentIndex.value == 0;
+  bool get isLastQuestion => currentIndex.value == allQuestions.length - 1;
 
   @override
   void onReady() {
@@ -55,5 +59,17 @@ class QuestionController extends GetxController {
   void setAnswer(String? answer) {
     currentQuestion.value?.selectedAnswer = answer;
     update(['answers_section']);
+  }
+
+  void skipToNext() {
+    if (currentIndex.value < allQuestions.length - 1) {
+      currentQuestion.value = allQuestions[++currentIndex.value];
+    }
+  }
+
+  void backToPrevious() {
+    if (currentIndex.value > 0) {
+      currentQuestion.value = allQuestions[--currentIndex.value];
+    }
   }
 }
