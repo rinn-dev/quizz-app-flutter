@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quizz_app/constants/colors.dart';
 import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
 import 'package:quizz_app/widgets/quizz_card.dart';
 
@@ -13,9 +12,9 @@ class QuizzCardsList extends GetView<QuizzController> {
     return Obx(
       () => Expanded(
         child: Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            color: Color(softScreenBackground),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            color: Colors.grey.withOpacity(0.2),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(

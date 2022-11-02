@@ -6,7 +6,6 @@ import 'package:quizz_app/controller/ui/menu_drawer_controller.dart';
 import 'package:quizz_app/presentational_layers/home_title_section.dart';
 import 'package:quizz_app/presentational_layers/quizz_cards_list.dart';
 import 'package:quizz_app/screens/home/menu.sreen.dart';
-import 'package:quizz_app/widgets/clickable_icon.dart';
 
 class HomeScreen extends GetView<MenuDrawerController> {
   const HomeScreen({super.key});
@@ -26,8 +25,8 @@ class HomeScreen extends GetView<MenuDrawerController> {
             menuScreen: const HomePageMenuScreen(),
             mainScreen: Scaffold(
               body: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.2),
+                decoration: const BoxDecoration(
+                  color: Color(softScreenBackground),
                 ),
                 child: Padding(
                   padding:
