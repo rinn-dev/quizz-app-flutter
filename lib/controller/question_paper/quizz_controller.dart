@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:quizz_app/controller/auth/auth.dart';
 import 'package:quizz_app/firebase/references.dart';
@@ -28,7 +29,9 @@ class QuizzController extends GetxController {
       }
       quizzes.assignAll(quizzModels);
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
   }
 
@@ -38,6 +41,7 @@ class QuizzController extends GetxController {
   }) {
     AuthController auth = Get.find();
     if (auth.isLoggedIn()) {
+      Get.offAllNamed('/question', arguments: quizz);
     } else {
       auth.showDialog();
     }

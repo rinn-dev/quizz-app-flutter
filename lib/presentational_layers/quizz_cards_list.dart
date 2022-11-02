@@ -26,7 +26,6 @@ class QuizzCardsList extends GetView<QuizzController> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    print(quizzController.quizzes[index].title);
                     controller.checkAuthBeforeQuizzDetails(
                       quizz: quizzController.quizzes[index],
                     );
