@@ -7,6 +7,7 @@ import 'package:quizz_app/screens/authentication/login.screen.dart';
 import 'package:quizz_app/screens/home/home.screen.dart';
 import 'package:quizz_app/screens/introduction/introduction.screen.dart';
 import 'package:quizz_app/screens/question/question.screen.dart';
+import 'package:quizz_app/screens/question/result.screen.dart';
 import 'package:quizz_app/screens/splash/splash.screen.dart';
 
 class AppRoutes {
@@ -34,6 +35,10 @@ class AppRoutes {
             }
           })),
       GetPage(name: "/login", page: () => const LoginScreen()),
+      GetPage(
+        name: "/results",
+        page: () => const ResultScreen(),
+      ),
     ];
   }
 }

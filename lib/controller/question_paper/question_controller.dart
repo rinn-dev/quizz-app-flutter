@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
+import 'package:quizz_app/controller/auth/auth.dart';
+import 'package:quizz_app/controller/question_paper/quizz_controller.dart';
 import 'package:quizz_app/firebase/loading_status.dart';
 import 'package:quizz_app/firebase/references.dart';
 import 'package:quizz_app/models/Quizz.model.dart';
@@ -71,5 +73,39 @@ class QuestionController extends GetxController {
     if (currentIndex.value > 0) {
       currentQuestion.value = allQuestions[--currentIndex.value];
     }
+  }
+
+  void checkResult() {
+    Get.offAndToNamed("/results");
+  }
+
+  int countCorrectAnswers() {
+    final totalCorrectAnswers = allQuestions
+        .where((element) => element.selectedAnswer == element.correctAnswer)
+        .length;
+    return totalCorrectAnswers;
+  }
+
+  void saveRecords() async {
+    final batch = firestore.batch();
+    AuthController authController = Get.find<AuthController>();
+    if (!authController.isLoggedIn()) {
+      return;
+    }
+    batch.set(
+        userRF
+            .doc(authController.user.value?.email)
+            .collection("results")
+            .doc(quizz.title),
+        {
+          "points": countCorrectAnswers(),
+        });
+
+    await batch.commit();
+  }
+
+  void tryagain() {
+    Get.find<QuizzController>()
+        .checkAuthBeforeQuizzDetails(quizz: quizz, newAttempt: true);
   }
 }

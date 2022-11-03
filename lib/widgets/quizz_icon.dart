@@ -13,7 +13,7 @@ class QuizzIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         clipBehavior: Clip.hardEdge,
         child: ColoredBox(
-          color: const Color(softBackground),
+          color: const Color(softBackground).withOpacity(0.5),
           child: Padding(
             padding: const EdgeInsets.all(5.0),
             child: SizedBox(

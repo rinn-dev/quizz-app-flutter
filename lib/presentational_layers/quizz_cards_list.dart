@@ -14,7 +14,7 @@ class QuizzCardsList extends GetView<QuizzController> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withOpacity(0.1),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(
