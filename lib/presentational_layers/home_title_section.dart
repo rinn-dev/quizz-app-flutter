@@ -40,7 +40,7 @@ class HomeTitleSection extends GetView<AuthController> {
               style: TextStyle(
                 fontSize: 21,
                 fontWeight: FontWeight.w700,
-                color: Color(secondaryColor),
+                color: Color(highlightColor),
               ),
             ),
           ],

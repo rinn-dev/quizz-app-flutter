@@ -41,7 +41,11 @@ class QuizzController extends GetxController {
   }) {
     AuthController auth = Get.find();
     if (auth.isLoggedIn()) {
-      Get.offAllNamed('/question', arguments: quizz);
+      if (newAttempt) {
+        Get.toNamed('/question', arguments: quizz, preventDuplicates: false);
+      } else {
+        Get.toNamed('/question', arguments: quizz);
+      }
     } else {
       auth.showDialog();
     }

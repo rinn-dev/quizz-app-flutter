@@ -45,7 +45,7 @@ class IntroductionSection extends StatelessWidget {
           child: LongButton(
             buttonText: "Get Started",
             onClicked: () => Get.offAllNamed("/home"),
-            bgColor: secondaryColor,
+            bgColor: highlightColor,
           ),
         ),
       ],

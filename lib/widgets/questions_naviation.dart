@@ -41,7 +41,14 @@ class QuestionsNavigation extends GetView<QuestionController> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: InkWell(
-                    onTap: controller.skipToNext,
+                    onTap: () {
+                      if (controller.isLastQuestion) {
+                        controller.saveRecords();
+                        controller.checkResult();
+                      } else {
+                        controller.skipToNext();
+                      }
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: controller.isLastQuestion
