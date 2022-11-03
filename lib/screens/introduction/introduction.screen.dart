@@ -12,8 +12,10 @@ class AppWelcomeScreen extends StatelessWidget {
       backgroundColor: const Color(softScreenBackground),
       body: Container(
         alignment: Alignment.center,
-        padding:
-            EdgeInsets.only(left: Get.width * 0.05, right: Get.width * 0.05),
+        padding: EdgeInsets.only(
+          left: Get.width * 0.05,
+          right: Get.width * 0.05,
+        ),
         child: const IntroductionSection(),
       ),
     );

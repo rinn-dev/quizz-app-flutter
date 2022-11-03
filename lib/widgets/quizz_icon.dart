@@ -15,7 +15,7 @@ class QuizzIcon extends StatelessWidget {
         child: ColoredBox(
           color: const Color(softBackground).withOpacity(0.5),
           child: Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(12.0),
             child: SizedBox(
               width: Get.width * 0.15,
               height: Get.width * 0.15,

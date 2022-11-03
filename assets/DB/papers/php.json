@@ -1,0 +1,125 @@
+{
+  "id": "ppr002",
+  "title": "PHP",
+  "image_url": "",
+  "Description": "Basic PHP MCQs to check your programming language skill.",
+  "time_seconds": 900,
+
+  "questions": [
+    {
+      "id": "ppr002q001",
+      "question": "Result of echo 76 <=> '76 trombones';",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "1"
+        },
+        {
+          "identifier": "B",
+          "Answer": "-1"
+        },
+        {
+          "identifier": "C",
+          "Answer": "Parser Error"
+        },
+        {
+          "identifier": "D",
+          "Answer": "0"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr002q002",
+      "question": "Result of $result = 25 % 6;",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "4.167"
+        },
+        {
+          "identifier": "B",
+          "Answer": "1.5"
+        },
+        {
+          "identifier": "C",
+          "Answer": "4"
+        },
+        {
+          "identifier": "D",
+          "Answer": "1"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr002q003",
+      "question": "Which is not a valid magic constant?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "__RESOURCE__"
+        },
+        {
+          "identifier": "B",
+          "Answer": "__FUNCTION__"
+        },
+        {
+          "identifier": "C",
+          "Answer": "__CLASS__"
+        },
+        {
+          "identifier": "D",
+          "Answer": "__TRAIT__"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q004",
+      "question": "Which superglobal variable holds information about headers, paths, and script locations?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "$_SERVER"
+        },
+        {
+          "identifier": "B",
+          "Answer": "$SERVER_VARIABLES"
+        },
+        {
+          "identifier": "C",
+          "Answer": "$_ENV"
+        },
+        {
+          "identifier": "D",
+          "Answer": "$GLOBALS"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr002q005",
+      "question": "Which command will extract the domain suffix ('com') from the string $string = 'https://cat-bounce.com';?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "sub($string, -3)"
+        },
+        {
+          "identifier": "B",
+          "Answer": "substr($string, -3)"
+        },
+        {
+          "identifier": "C",
+          "Answer": "substr($string, 3)"
+        },
+        {
+          "identifier": "D",
+          "Answer": "$string.substr(-3)"
+        }
+      ],
+      "correct_answer": "B"
+    }
+  ]
+}

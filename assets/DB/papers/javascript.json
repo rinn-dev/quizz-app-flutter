@@ -1,0 +1,125 @@
+{
+  "id": "ppr001",
+  "title": "Javascript",
+  "image_url": "",
+  "Description": "Things that will make you realize that you don't know Js.",
+  "time_seconds": 900,
+
+  "questions": [
+    {
+      "id": "ppr001q001",
+      "question": "Which of the following operators can be used to do a short-circuit evaluation?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "++"
+        },
+        {
+          "identifier": "B",
+          "Answer": "--"
+        },
+        {
+          "identifier": "C",
+          "Answer": "=="
+        },
+        {
+          "identifier": "D",
+          "Answer": "||"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr001q002",
+      "question": "Which Variable-defining keyword allows its variable to be accessed (as undefined) before the line that defines it?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "all of them"
+        },
+        {
+          "identifier": "B",
+          "Answer": "const"
+        },
+        {
+          "identifier": "C",
+          "Answer": "var"
+        },
+        {
+          "identifier": "D",
+          "Answer": "let"
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "ppr001q003",
+      "question": "What does this code expression ( [] == []; ) evaluate to?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "true"
+        },
+        {
+          "identifier": "B",
+          "Answer": "undefined"
+        },
+        {
+          "identifier": "C",
+          "Answer": "[]"
+        },
+        {
+          "identifier": "D",
+          "Answer": "false"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr001q004",
+      "question": "What type of function can have its execution suspended and then resumed at a later point?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "Generator function"
+        },
+        {
+          "identifier": "B",
+          "Answer": "Callback function"
+        },
+        {
+          "identifier": "C",
+          "Answer": "Promise Function"
+        },
+        {
+          "identifier": "D",
+          "Answer": "async/await function"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr001q005",
+      "question": "Choose one that returns true.",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "NaN == NaN"
+        },
+        {
+          "identifier": "B",
+          "Answer": "undefined == null"
+        },
+        {
+          "identifier": "C",
+          "Answer": "[3] == [3]"
+        },
+        {
+          "identifier": "D",
+          "Answer": "0 != -0"
+        }
+      ],
+      "correct_answer": "B"
+    }
+  ]
+}

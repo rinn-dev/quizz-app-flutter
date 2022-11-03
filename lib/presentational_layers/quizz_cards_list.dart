@@ -18,7 +18,7 @@ class QuizzCardsList extends GetView<QuizzController> {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 25.0,
+              vertical: 20.0,
               horizontal: 16.0,
             ),
             child: ListView.separated(

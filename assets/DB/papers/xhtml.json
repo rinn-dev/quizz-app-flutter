@@ -1,0 +1,125 @@
+{
+  "id": "ppr003",
+  "title": "HTML",
+  "image_url": "",
+  "Description": "Check your HTML knowledge with this quizzes.",
+  "time_seconds": 900,
+
+  "questions": [
+    {
+      "id": "ppr003q001",
+      "question": "Which tag is the root element of an HTML document?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "<DOCTYPE html>"
+        },
+        {
+          "identifier": "B",
+          "Answer": "<html>"
+        },
+        {
+          "identifier": "C",
+          "Answer": "<body>"
+        },
+        {
+          "identifier": "D",
+          "Answer": "<root>"
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "ppr003q002",
+      "question": "Which image formats can be displayed by all web browsers?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "JPG, GIF, TIF"
+        },
+        {
+          "identifier": "B",
+          "Answer": "JPG, TIF, BMP"
+        },
+        {
+          "identifier": "C",
+          "Answer": "TIF, BMP, GIF"
+        },
+        {
+          "identifier": "D",
+          "Answer": "PNG, GIF, JPG"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr003q003",
+      "question": "What is the best semantic to use Quotes in HTML?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "<q>"
+        },
+        {
+          "identifier": "B",
+          "Answer": "<quote>"
+        },
+        {
+          "identifier": "C",
+          "Answer": "<blockquote>"
+        },
+        {
+          "identifier": "D",
+          "Answer": "<notation>"
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "ppr003q004",
+      "question": "Which choice is not a legal type attribute for the <input> tag?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "<input type='color'>"
+        },
+        {
+          "identifier": "B",
+          "Answer": "<input type='tel'>"
+        },
+        {
+          "identifier": "C",
+          "Answer": "<input type='week'>"
+        },
+        {
+          "identifier": "D",
+          "Answer": "<input type='num'>"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "ppr003q005",
+      "question": "What is the default method for form submission?",
+      "answers": [
+        {
+          "identifier": "A",
+          "Answer": "GET"
+        },
+        {
+          "identifier": "B",
+          "Answer": "POST"
+        },
+        {
+          "identifier": "C",
+          "Answer": "PUT"
+        },
+        {
+          "identifier": "D",
+          "Answer": "DELETE"
+        }
+      ],
+      "correct_answer": "A"
+    }
+  ]
+}

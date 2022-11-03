@@ -23,27 +23,29 @@ class HomeScreen extends GetView<MenuDrawerController> {
             style: DrawerStyle.DefaultStyle,
             backgroundColor: Colors.white.withOpacity(0.5),
             menuScreen: const HomePageMenuScreen(),
-            mainScreen: Scaffold(
-              body: Container(
-                decoration: const BoxDecoration(
-                  color: Color(softScreenBackground),
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 12.0, right: 12.0, top: 12.0),
-                  child: Column(
-                    children: [
-                      HomeTitleSection(
-                        toggleDrawer: controller.toggleDrawer,
-                      ),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                      const QuizzCardsList(),
-                      const SizedBox(
-                        height: 16,
-                      ),
-                    ],
+            mainScreen: SafeArea(
+              child: Scaffold(
+                body: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(softScreenBackground),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 12.0, right: 12.0, top: 18.0),
+                    child: Column(
+                      children: [
+                        HomeTitleSection(
+                          toggleDrawer: controller.toggleDrawer,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        const QuizzCardsList(),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
